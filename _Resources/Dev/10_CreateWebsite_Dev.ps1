@@ -1,11 +1,7 @@
-<<<<<<< HEAD
- Import-Module WebAdministration
-=======
 Import-Module WebAdministration
->>>>>>> 5aeb8ab7f154f50a67fb475d24c2593afcb0e0f3
-$webPathInMaterijali = "\Dinara\Website\Dev\dinara-website\Website"
-$iisAppName = "destinationdinara.dev.sistemi.hr"
-$iisAppPoolName = "destinationdinara.dev.sistemi.hr"
+$webPathInMaterijali = "\Dinara\Website\Dev\destinationdinara-website\Website"
+$iisAppName = "destinationdinara"
+$iisAppPoolName = "destinationdinara"
 
 $iisAppPoolDotNetVersion = "v4.0"
 $iisAppPoolEnable32Bit = "True"
