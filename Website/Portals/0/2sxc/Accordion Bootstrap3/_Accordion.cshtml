@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
+<script src="@App.Path/dist/accordion.js" data-enableoptimizations="true"></script>
+
+<div class="co-container-outer">
+    <div class="co-container-inner co-accodion-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
+    @foreach (var accord in AsDynamic(Data["Default"]))
+    {
+        // detect the demo item, because we shouldn't add inner content while still showing this one
+        var isDemoItem = accord.EntityGuid.ToString() == "e90752f1-29d5-46a3-984c-408d97feae91";
+        var initiallyExpanded = accord.InitiallyExpanded ?? false;
+
+        <div class="co-accodion-item sc-element">
+            @accord.Toolbar
+            <div class="co-accordion-title @(initiallyExpanded ? "active" : "")" sc-element">
+               
+                <h2>
+                    <span class="co-accordion-icon">
+                    @if(!String.IsNullOrEmpty(accord.Icon)){
+                        <i class="glyphicon @accord.Icon co-icon" aria-hidden="true"></i>
+                    }
+                </span>
+                @accord.Title</h2>
+            </div>
+
+            @* prevent adding content if still showing the demo-item - this is done by only adding the class as needed *@
+            <div class="co-accordion-content @(isDemoItem ? "" : "sc-content-block-list")" 
+                style="@(initiallyExpanded ? "display:block;" : "")"
+                @Edit.ContextAttributes(accord, field: "DesignedContent")>
+                @if(isDemoItem)
+                {
+                    @Html.Raw(App.Resources.DemoItemMessage)
+                }
+                else 
+                { 
+                    foreach (var ac in accord.DesignedContent)
+                    {
+                        @ac.Render();
+                    }
+                }
+            </div>
+        </div>
+    }
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "2sxc-app-blueimp-for-dnn",
+  "version": "3.0.0",
+  "description": "A simple, easy to customize app for DNN (DotNetNuke) based on the awesome blueimp gallery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dnn",
+    "dotnetnuke",
+    "blueimp",
+    "javascript",
+    "gallery",
+    "carousel",
+    "images",
+    "resize",
+    "thumbnail"
+  ],
+  "author": "2sic internet solutions Switzerland/Liechtenstein",
+  "repository": {
+    "url": "https://github.com/2sic/app-blueimp"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0"
+  }
+}

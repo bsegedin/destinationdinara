@@ -1,0 +1,68 @@
+    /* Accordion */
+    
+    .co-accodion-wrapper {
+        padding: 0;
+    }
+    
+    .co-accodion-wrapper .co-accordion-title {
+        padding: 11px 0;
+        font-size: 18px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .co-accodion-wrapper .co-accordion-title h2,
+    .co-accodion-wrapper .co-accordion-title h3 {
+        display: block;
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        padding-right: 30px;
+        padding-left: 25px;
+        position: relative;
+    }
+    
+    .co-accodion-wrapper .co-accordion-title:after {
+        content: "\2b";
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        display: inline-block;
+        font: normal normal normal 10px/1 'Glyphicons Halflings';
+        font-size: 14px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .co-accodion-wrapper .co-accordion-title.active:after {
+        content: "\2212";
+    }
+    
+    .co-accodion-wrapper .co-accordion-icon {
+        position: absolute;
+        left: 0;
+        top: 0px;
+    }
+    
+    .co-accodion-wrapper .co-accordion-content {
+        display: none;
+        padding: 15px;
+    }
+}
+@media all and (min-width: 768px) {
+    .co-accodion-wrapper .co-accordion-content {
+        padding: 30px;
+    }
+}
+@media all {
+    .co-accodion-wrapper .co-accordion-content h1,
+    .co-accodion-wrapper .co-accordion-content h2,
+    .co-accodion-wrapper .co-accordion-content h3 {
+        font-size: 24px;
+        color: #77b82a;
+        margin: 0;
+        margin-bottom: 11px;
+        max-width: 87%;
+    }
