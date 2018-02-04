@@ -13,6 +13,7 @@
     // this is the parameter passed in from the calling page
     var imgItem = PageData["img"];
     int width = PageData["width"];
+    
     if(retina) {
         width += width; // double if retina
         quality = 50;
@@ -35,7 +36,7 @@
     if (withLink) {
         @:<a title="@title" class="fancybox" href="@imgItem.Image?maxwidth=1400&amp;maxheight=990">
     }
-    <img class="co-content-image" src="@imgItem.Image?w=@width&amp;quality=@quality" alt="@title" />
+    <img class="co-content-image" src="@imgItem.Image?w=540&amp;h=300&amp;quality=@quality&amp;mode=crop" alt="@title" />
     if (withLink) {
         @:</a>
     }
