@@ -1,0 +1,24 @@
+Hi Lance,
+
+Not sure you have seen thison Skype:
+
+I can reproduce it.. here's what I found:
+You need a .net 4 patch or .net 4.5 to detect IE 11 correctly
+
+But IE 11 now returns "internetexplorer" instead of "IE" as the borwser in asp.net (which is what I'm testing against)
+So IfBrowser = "IE" for all but IE 11
+IfBrowser = "internetexplorer" for IE 11 & up
+They did this to stop people serving special content for IE :-s
+
+BTW, changing the document mode in IE panel (F12) does not change the user agent.. 
+It's not like the previous browser emulation.. (you have to switch that back on with a registry key)
+
+I think it get's complicated for people if they have to use both 'ie' and 'internetexplorer' so I corrected that in a new release/
+
+I uploaded the new version of the Style Helper, it will also return "ie" for IE 11.
+
+https://stylehelper.codeplex.com/releases/view/116166
+
+Let me know if that helps :-)
+
+Regards, Timo
